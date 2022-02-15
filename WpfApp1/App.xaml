@@ -1,0 +1,26 @@
+﻿<Application x:Class="WpfApp1.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:WpfApp1"
+             xmlns:ninject="clr-namespace:WpfApp1.Ninject"
+             Startup="App_Startup">
+    <Application.Resources>
+        <ResourceDictionary>
+            <DataTemplate DataType="{x:Type local:MainViewModel}">
+                <local:MainWindow />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type local:UserViewModel}">
+                <local:UserView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type local:SettingViewModel}">
+                <local:SettingView />
+            </DataTemplate>
+            
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resx2/StringResources.xaml" />
+                <ResourceDictionary Source="/Resx2/StringResources.en.xaml" />
+                <ResourceDictionary Source="/Resx2/StringResources.vi.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
