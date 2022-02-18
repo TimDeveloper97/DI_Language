@@ -144,5 +144,10 @@ namespace Manager8Bia.Services
 
             return await Task.FromResult(true);
         }
+
+        public Task<bool> MethodTest()
+        {
+            return Task.FromResult(true);
+        }
     }
 }

@@ -24,17 +24,20 @@ namespace WpfApp1
         { get => _current; set { _current = value; OnPropertyChanged(); } }
         public string Title { get => title; set { title = value; OnPropertyChanged(); } }
 
-        public MainViewModel(UserViewModel userVM, SettingViewModel settingVM)
+        [Inject]
+        public MainViewModel(UserViewModel userVM, SettingViewModel settingVM, IDataStore<A> dataService)
         {
             Title = "DUYANH HOT FIX1";
             OnPropertyChanged(Title);
             Current = settingVM;
+            _dataService = dataService;
+            var x = _dataService.MethodTest();
         }
 
-        [Inject]
-        public void SetDataService(IDataStore<A> dataService)
-        {
-            _dataService = dataService;
-        }
+        //[Inject]
+        //public void SetDataService(IDataStore<A> dataService)
+        //{
+        //    _dataService = dataService;
+        //}
     }
 }

@@ -8,6 +8,7 @@ namespace Manager8Bia.Services
 {
     public interface IDataStore<T>
     {
+        Task<bool> MethodTest();
         Task<bool> CreateItemAsync(string pFile);
         Task<bool> AddItemAsync(T item, string pFile);
         Task<bool> UpdateItemAsync(T item, string pFile);
